@@ -7,29 +7,35 @@
         "products": [
             {
                 "name": "Bota",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/bota.png?raw=true",
                 "size": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
                 "models": ["Modelo 01", "Modelo 02", "Modelo 03"]
             },
             {
                 "name": "Capacete",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/capacete.png?raw=true",
                 "colors": ["vermelho", "azul", "verde", "amarelo", "roxo", "laranja", "preto", "branco", "rosa", "marrom"]
             },
             {
                 "name": "Colete",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/colete.png?raw=true",
                 "size": ["P", "M", "G", "GG"],
                 "colors": ["laranja", "amarelo"]
             },
             {
                 "name": "Luva",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/luvas.png?raw=true",
                 "size": ["P", "M", "G", "GG"],
                 "colors": ["branco", "preto"]
             },
             {
                 "name": "Protetor Visual",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/protetorVisual.png?raw=true",
                 "models": ["Modelo 01", "Modelo 02", "Modelo 03"]
             },
             {
                 "name": "Protetor Auricular",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/protetorAuricular.jpg?raw=true",
                 "colors": ["amarelo", "laranja", "branco"]
             }
         ]
