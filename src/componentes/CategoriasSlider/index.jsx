@@ -22,7 +22,7 @@ function CategoriasSlider() {
                 data.map((item, index) => (
                     <Link to={`/menu-escolha/${item.code}`} key={index}>
                         <div className='card'>
-                            <img src={'./../../icons/solicEPI.svg'} alt=""  />
+                            <img src={item.image} alt=""  />
                             <p>{item.name}</p>
                         </div>
                     </Link>
