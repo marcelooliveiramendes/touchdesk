@@ -1,0 +1,51 @@
+#loginContainer{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    
+    .loginContent{
+        width: 100%;
+
+        #btnActions{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            a{
+                text-decoration: none;
+                width: 350px;
+                background-color: #fff;
+                height: 550px;
+                border: 1px solid #ccc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 20px;
+                position: relative;
+
+                img{
+                    width: 150px;
+                }
+                p{
+                    color: #808080;
+                    font-size: 18px;
+                    font-weight: 600;
+                    position: absolute;
+                    bottom: 30px;
+                }
+                
+            }
+
+            
+            
+        }
+
+    }
+}

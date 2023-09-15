@@ -1,0 +1,22 @@
+#menuContainer{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px;
+
+    #menuContent{
+        display: flex;
+        
+        #sidebar{
+            width: 200px;
+            height: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+}
