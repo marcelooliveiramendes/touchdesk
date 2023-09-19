@@ -29,7 +29,7 @@ function HomeSolicitacao() {
                         <img src={iniciarSolic} alt="" srcset="" />
                         <p>Nova Solicitação</p>
                     </Link>
-                    <Link to="/home-solicitacao">
+                    <Link to='/consulta-solic'>
                         <img src={consultSolic} alt="" srcset="" />
                         <p>Consulta de Solicitações</p>
                     </Link>

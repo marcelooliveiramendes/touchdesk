@@ -1,27 +1,28 @@
-#menuContainer{
+#confirmacaoContainer{
     width: 100vw;
     height: 100vh;
     background-size: cover;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 50px 0px;
+    padding: 50px;
 
-    #menuContent{
+    #solicitacaoEnviadaContent{
+        width: 100vw;
+        height: 100%;
+        padding: 0px 30px;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         
-        #sidebar{
-            width: 260px;
-            height: 1200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px;
-            &::-webkit-scrollbar {
-                display: none; /* Oculta a barra de rolagem vertical em navegadores WebKit (Chrome, Safari, etc.) */
-            }
+        h3{
+            font-size: 32px;
+            color: #606060;
+            margin-top: 40px;
         }
-
+        
     }
 
     #btnMenuActions{
@@ -49,4 +50,4 @@
         }
         
     }
-}
+}   

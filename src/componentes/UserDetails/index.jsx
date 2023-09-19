@@ -8,7 +8,7 @@ function UserDetails() {
     <div id='userDetailsContainer'>
         <img src={userImg} alt="" />
         <div className="user-info">
-            <h3>Angelino Jo. Lixo</h3>
+            <h3>Davi Cedro</h3>
             <p>CPF 000.000.000-00</p>
         </div>
         <Link to={'/home'} id='btnLogout'>
@@ -17,5 +17,6 @@ function UserDetails() {
     </div>
   );
 }
+
 
 export default UserDetails;

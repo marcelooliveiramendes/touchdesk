@@ -26,7 +26,7 @@ function Home() {
                 </button>
 
             </Link>
-            <Link to='/reconhecimento-facial'>
+            <Link to="/home-solicitacao">
                 <button>
                     <img src={anonimoIcon} alt="" srcset="" />
                     <p>Anônimo</p>

@@ -43,15 +43,16 @@ function ReconhecimentoFacil() {
             </div>
 
             <div className="btnActions">
-                <Link to='/login'>
-                    <button className='btnAcessarMan'>
+                <Link to='/login' className='btnAcessarMan'>
+                    <button>
                         Acessar Manualmente
                     </button>
                 </Link>
-                
-                <button className='btnVoltar'>
-                    Voltar
-                </button>
+                <Link to='/home'>
+                    <button className='btnVoltar'>
+                        Voltar
+                    </button>
+                </Link>
             </div>
 
         </motion.div>

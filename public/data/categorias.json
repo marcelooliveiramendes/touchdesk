@@ -35,9 +35,14 @@
             },
             {
                 "name": "Protetor Auricular",
-                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/protetorAuricular.jpg?raw=true",
+                "image": "https://github.com/marcelooliveiramendes/touchdesk/blob/main/src/imgs/produtos/protetorAuricular.png?raw=true",
                 "colors": ["amarelo", "laranja", "branco"]
             }
         ]
+    },
+    {
+        "name": "Fretado",
+        "image": "https://raw.githubusercontent.com/marcelooliveiramendes/touchdesk/5914f13a7c5e17a42f5ba0722c95d8a2cf478012/src/icons/solicEPI.svg",
+        "code": "fretado"
     }]
 }

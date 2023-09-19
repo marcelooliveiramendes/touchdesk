@@ -16,6 +16,7 @@ function TelaDescanso() {
         }
     }, 8000);
     
+    localStorage.setItem('solicitacoes', []);
 
     return(
         <div className='telaDescansoContainer'>

@@ -30,7 +30,7 @@ function Login() {
                 <input type="password" name="txt_password" id="txt_password" />
 
                 <div id="btnActionsLogin">
-                    <Link to="/login">
+                    <Link to="/home">
                         <button id='btnVoltar'>Voltar</button>
                     </Link>
                     <Link to="/home-solicitacao">

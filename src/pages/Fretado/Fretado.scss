@@ -1,0 +1,146 @@
+#fretadoContainer{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px;
+
+    p{
+        font-size: 22px;
+        font-weight: 600;
+        color: #585858;
+        margin-bottom: 10px;
+    }
+
+    #fretadoContent{
+        display: flex;
+        padding: 30px;
+        
+        #sidebar{
+            width: 200px;
+            height: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            
+        }
+        #mainContent{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0px 30px;
+        }
+
+    }
+
+
+
+  
+    .categoriaFretado{
+        display: block;
+    
+        input[type='radio']{
+            display: none;
+        }
+    
+        div{
+            background-color: #fff;
+            padding: 20px 40px;
+            transition: .3s ease-in;
+            border-radius: 20px;
+            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+            color: #8227D1;
+            font-weight: 600;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid #ccc;
+
+            img{
+                width: 50px;
+            }
+
+            span{
+                position: absolute;
+                bottom: 10px;
+            }
+        
+        }
+        
+        input[type='radio']:checked ~ div{
+            background-color: #8227D1;
+            color: #fff;
+
+            img{
+                filter: brightness(0) invert(1) grayscale(100%) contrast(100%);
+            }
+        }
+
+        
+    }
+
+    .switchContainer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .switch{
+        
+            input[type='radio']{
+                display: none;
+            }
+        
+            span{
+                background-color: #fff;
+                padding: 20px 40px;
+                transition: .3s ease-in;
+                border-radius: 10px;
+                box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+                display: block;
+                color: #8227D1;
+                font-size: 18px;
+                font-weight: 600;
+                border: 1px solid #ccc;
+            }
+            
+            input[type='radio']:checked ~ span{
+                background-color: #8227D1;
+                color: #fff;
+            }
+        }
+    }
+    
+    #btnFretadoActions{
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+
+        button{
+            width: 50%;
+            height: 80px;
+            border: 1px solid #8227D1;
+            background: transparent;
+            border-radius: 20px;
+            font-size: 22px;
+            color: #8227D1;
+            font-weight: 600;
+
+            &:nth-child(2){
+                background-color: #8227D1;
+                color: #fff;
+            }
+        }
+        
+    }
+}
