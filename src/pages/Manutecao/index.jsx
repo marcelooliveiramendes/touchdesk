@@ -20,7 +20,38 @@ function Manutencao() {
         navigate('/menu-escolha');
     }
     const sendSolic = () => {
-        navigate('/confirmacao-enviada');
+        debugger
+        try{
+            var area = document.querySelector('#nome_area').value
+            const minimo = 10000000;
+            const maximo = 90000000;
+            const numeroAleatorio = parseInt(Math.random() * (maximo - minimo) + minimo);
+            const usuarioJSON = localStorage.getItem('solicitacoes');
+            let usuarioObjeto;
+            if(usuarioJSON !== ''){
+                usuarioObjeto = JSON.parse(usuarioJSON);      
+            } 
+            let infos = {
+                'id': numeroAleatorio,
+                'tipoSolic': 'Manutenção',
+                'data': getDate(),
+                'tipo': 'manutencao',
+                'info': {
+                    'setor': area,
+                    'obs': document.querySelector('#txt_obs').value,
+                }
+
+            }
+            if(usuarioObjeto !== undefined){
+                localStorage.setItem('solicitacoes', JSON.stringify([...usuarioObjeto, infos]));
+            } else {
+                localStorage.setItem('solicitacoes', JSON.stringify([infos]));
+            }
+
+            navigate('/confirmacao-enviada');
+        }catch{
+            console.log('Falha ao salvar');
+        }
     }
 
     const changeView = () => {
@@ -29,22 +60,27 @@ function Manutencao() {
         if(view === 'escritorio'){
             setView('escritorio')
             setDados(['ADM', "RH", 'Contabilidade', 'Compras', 'Facilities', 'RP', 'Qualidade'])
+            document.querySelector("#nome_area").value = 'Escritório'
         } 
         if(view === 'fabrica'){
             setView('fabrica')
             setDados(['Produção', "PCP", 'Expedição', 'Pesquisa', 'Desenvolvimento', 'Qualidade'])
+            document.querySelector("#nome_area").value = 'Fábrica'
         } 
         if(view === 'estacionamento'){
             setView('fabrica')
             setDados(['Leste', "Oeste", 'Norte', 'Sul'])
+            document.querySelector("#nome_area").value = 'Área Comum'
         } 
         if(view === 'areaComum'){
             setView('fabrica')
             setDados(['Refeitório', 'Vestiário Masculino', 'Vestiário Feminino', 'Salas de reunião', 'Banheiro Masculino', 'Banheiro Feminino', 'Salas de lazer'])
+            document.querySelector("#nome_area").value = 'Área Comum'
         } 
         if(view === 'armazem'){
             setView('armazem')
             setDados(['Leste', "Oeste", 'Norte', 'Sul'])
+            document.querySelector("#nome_area").value = 'Armazem'
         } 
        
     }
@@ -61,6 +97,7 @@ function Manutencao() {
             <UserDetails />
             <div id="fretadoContent">
                 <div id="sidebar">
+                    <input type="hidden" name="nome_area" id='nome_area'/>
                     <label className='categoriaFretado'>
                         <input type="radio" name="categoriaManutencaoSwt" id='categoriaManutencaoSwt' value={'escritorio'} onChange={changeView}/>
                         <div >
@@ -124,7 +161,7 @@ function CadastrarSolicitacao({dados}){
                 {dados &&(
                     dados.map((item, i) => (
                         <label className='switch'>
-                            <input type="radio" name="localOrigemSwt" />
+                            <input type="radio" name="manutencaoSetor" />
                             <span>{item}</span>
                         </label>
 
@@ -133,10 +170,24 @@ function CadastrarSolicitacao({dados}){
             </div>
             <br />
             <p>Descreva o ocorrido:</p>
-           <textarea name="" id="" cols="30" rows="10" placeholder='Digite sua observação...'></textarea>
+           <textarea name="txt_obs" id="txt_obs" cols="30" rows="10" placeholder='Digite sua observação...'></textarea>
         </>
     )
 }
 
 
 export default Manutencao;
+
+const getDate = () => {
+    var dataAtual = new Date();
+
+    var dia = String(dataAtual.getDate()).padStart(2, '0');
+    var mes = String(dataAtual.getMonth() + 1).padStart(2, '0'); // Mês é base 0, então somamos 1.
+    var ano = dataAtual.getFullYear();
+
+    var hora = String(dataAtual.getHours()).padStart(2, '0');
+    var minutos = String(dataAtual.getMinutes()).padStart(2, '0');
+
+    var dataHoraFormatada = dia + '/' + mes + '/' + ano + ' ' + hora + ':' + minutos
+    return dataHoraFormatada
+}

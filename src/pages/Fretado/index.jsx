@@ -112,7 +112,7 @@ function Fretado() {
                 <div id="mainContent">
                     {view === "" &&(<SemEscolhaAtivo />)}
                     {view === "cadastrar" &&(<CadastrarRota onchange={verifyInfo}/>)}
-                    {view === "alterar" &&(<div>Sem Rotas Cadastrada</div>)}
+                    {view === "alterar" &&(<MostrarRotasCadastradas />)}
                 </div>
             </div>
             <div id="btnFretadoActions">
@@ -183,6 +183,47 @@ function CadastrarRota({onchange}){
                     ))
                 )}
             </div>
+        </>
+    )
+}
+
+function MostrarRotasCadastradas(){
+    const [dados, setDados] = useState()
+
+    useEffect(() => {
+        let dados = JSON.parse(localStorage.getItem('solicitacoes'))
+        setDados(dados.filter(item => item.tipo === 'fretado'))
+
+    }, [])
+
+    return(
+        <>  
+            <h1>Solicitações</h1>
+            <br />
+            {dados !== undefined && (
+                <>
+                    {dados.map((item) => (
+                        <div className='cardRota'>
+                            <div>
+                                <h4>Origem</h4>
+                                <p>{item.info.localOrigem}</p>
+                            </div>
+                            <div>
+                                <h4>Origem</h4>
+                                <p>{item.info.localDestino}</p>
+                            </div>
+                            <div>
+                                <h4>Hora Ida</h4>
+                                <p>{item.info.horaIda}</p>
+                            </div>
+                            <div>
+                                <h4>Hora Volta</h4>
+                                <p>{item.info.horaVolta}</p>
+                            </div>
+                        </div>
+                    ))}
+                </>
+            )}
         </>
     )
 }
