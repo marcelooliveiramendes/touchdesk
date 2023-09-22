@@ -29,38 +29,41 @@ function ConsultaSolicitacoes() {
             style={{ backgroundImage: `url(${background})` }}
         >   
             <UserDetails /> 
-            <table>
-                <thead>
-                    <tr>
-                        <td>Tipo</td>
-                        <td>Data</td>
-                        <td>Status</td>
-                        <td>N° da Sol.</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data &&(data.map((item, i) => (
-                        <React.Fragment key={i}>
-                            <br />
-                            <tr >
-                                <td><div>{item.tipoSolic}</div></td>
-                                <td><div>{item.data}</div></td>
-                                <td><div>Em análise</div></td>
-                                <td><div>{item.id}</div></td>
-                                <td>
-                                    <div>
-                                        <Link className='btnConsultSolic' to={'/consulta-solic/'+ item.id}>
-                                            Acessar
-                                        </Link>
-                                    </div>
-                                </td>
-                            </tr>
-                        </React.Fragment>
-                    )))}
-                    
-                </tbody>
-            </table>
+            <div id='tableList'>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Tipo</td>
+                            <td>Data</td>
+                            <td>Status</td>
+                            <td>N° da Sol.</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data &&(data.map((item, i) => (
+                            <React.Fragment key={i}>
+                                <br />
+                                <tr >
+                                    <td><div>{item.tipoSolic}</div></td>
+                                    <td><div>{item.data}</div></td>
+                                    <td><div>Em análise</div></td>
+                                    <td><div>{item.id}</div></td>
+                                    <td>
+                                        <div>
+                                            <Link className='btnConsultSolic' to={'/consulta-solic/'+ item.id}>
+                                                Acessar
+                                            </Link>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </React.Fragment>
+                        )))}
+                        
+                    </tbody>
+                </table>
+
+            </div>
 
             <Link to="/home-solicitacao" id="btnVoltarConsulta">
                 <button>Voltar</button>

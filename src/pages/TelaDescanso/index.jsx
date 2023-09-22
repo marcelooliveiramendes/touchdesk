@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import './TelaDescanso.scss';
 import telaDescanso1 from '../../imgs/telaDescanso1.png'
 import telaDescanso2 from '../../imgs/telaDescanso2.png'
@@ -16,14 +16,21 @@ function TelaDescanso() {
         }
     }, 8000);
     
-    localStorage.setItem('solicitacoes', []);
+    useEffect(() => {
+        debugger
+        let localDB = localStorage.getItem('solicitacoes')
+
+        if(localDB === ''){
+            localStorage.setItem('solicitacoes', []);
+        }
+    }, [])
 
     return(
         <div className='telaDescansoContainer'>
             <div id='bgImgDescanso'>
-                {count === 0 &&( <img src={telaDescanso1} alt="" srcset="" cache-control="max-age=2592000"  />)}
-                {count === 1 &&( <img src={telaDescanso2} alt="" srcset="" cache-control="max-age=2592000" />)}
-                {count === 2 &&( <img src={telaDescanso3} alt="" srcset="" cache-control="max-age=2592000" />)}
+                {count === 0 &&( <img src={telaDescanso1} alt=""  cache-control="max-age=2592000"  />)}
+                {count === 1 &&( <img src={telaDescanso2} alt=""  cache-control="max-age=2592000" />)}
+                {count === 2 &&( <img src={telaDescanso3} alt=""  cache-control="max-age=2592000" />)}
             </div>
             <div id="telaDescansoConteudo">
                 <img src={logo} id='logo'alt="" srcset="" />

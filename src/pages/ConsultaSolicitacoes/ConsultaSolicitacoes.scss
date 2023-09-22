@@ -9,43 +9,57 @@
     padding: 50px;
     
 
-    table{
-        width: 90vw;
-        margin: 0px 20px;
-        text-align: center;
-        border-collapse: collapse;
+    #tableList{
+        width: 100vw;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        max-height: 1200px;
+        overflow-y: auto;
 
-        thead tr {
-            font-size: 22px;
+        &::-webkit-scrollbar {
+            display: none; /* Oculta a barra de rolagem vertical em navegadores WebKit (Chrome, Safari, etc.) */
         }
 
-        tbody{
-
-            tr{
-                width: 100%;
-                height: 60px;
-                background-color:#fff;
-                border-radius: 20px;
-                margin-top: 10px;
-
+        table{
+            width: 90vw;
+            margin: 0px 20px;
+            text-align: center;
+            border-collapse: collapse;
+    
+            thead tr {
+                font-size: 22px;
             }
-            td{
-                div{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 10px 0px;
+    
+            tbody{
+    
+                tr{
+                    width: 100%;
+                    height: 60px;
+                    background-color:#fff;
+                    border-radius: 20px;
+                    margin-top: 10px;
+    
                 }
-
-                &:nth-child(1){
-                    border-radius: 10px 0px 0px 10px;
-                }
-                &:nth-child(5){
-                    border-radius: 0px 10px 10px 0px;
-                    width: 300px;
+                td{
+                    div{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 10px 0px;
+                    }
+    
+                    &:nth-child(1){
+                        border-radius: 10px 0px 0px 10px;
+                    }
+                    &:nth-child(5){
+                        border-radius: 0px 10px 10px 0px;
+                        width: 300px;
+                    }
                 }
             }
         }
+
     }
 
     .btnConsultSolic{

@@ -15,6 +15,7 @@ import Fretado from './pages/Fretado';
 import ConfirmacaoRota from './pages/ConfirmacaoRota';
 import Manutencao from './pages/Manutecao';
 import ConsultaSolicitacoes from './pages/ConsultaSolicitacoes';
+import Solicitacao from './pages/Solicitacao';
 
 const App = () => {
   return(
@@ -33,7 +34,7 @@ const App = () => {
         <Route path='/confirmacao-rota' element={<ConfirmacaoRota />} />
         <Route path='/menu-escolha/manutencao' element={<Manutencao />} />
         <Route path='/consulta-solic' element={<ConsultaSolicitacoes />} />
-        <Route path='/consulta-solic/:id' element={<ConsultaSolicitacoes />} />
+        <Route path='/consulta-solic/:id' element={<Solicitacao />} />
       </Routes>
     </BrowserRouter>
   )
